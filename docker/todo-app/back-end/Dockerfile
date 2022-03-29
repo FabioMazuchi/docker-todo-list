@@ -1,6 +1,6 @@
 FROM node:14-alpine
 
-RUN apk add npm
+RUN apk add --update nodejs npm
 
 WORKDIR /app
 
