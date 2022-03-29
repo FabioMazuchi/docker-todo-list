@@ -1,14 +1,17 @@
 FROM node:14-alpine
 
-RUN apk add --no-cache nodejs npm
+# RUN apk add --no-cache nodejs npm
 
 WORKDIR /app
 
-COPY . /app
+COPY . ./
+
+ADD node_modules.tar.gz ./
 
 RUN npm install
 
-RUN rm -rf /var/cache/apk/*
+COPY . ./
+# RUN rm -rf /var/cache/apk/*
 
 EXPOSE 3001
 
