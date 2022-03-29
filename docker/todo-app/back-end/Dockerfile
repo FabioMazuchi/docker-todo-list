@@ -1,8 +1,10 @@
 FROM node:14-alpine
 
-RUN apk add --no-cache nodejs npm
+RUN apk add nodejs npm
 
-RUN rm -rf /var/cache/apk/*
+RUN apk update
+
+RUN apk add nodejs npm
 
 WORKDIR /app
 
